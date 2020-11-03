@@ -14,7 +14,9 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 // Set our api response
 app.get('/api', (req, res) => {
-  res.send('api works');
+  var jsonData = {"results": ["Important 1 ","Thing 2"]};
+  res.setHeader('Content-Type', 'application/json');
+    res.send(JSON.stringify(jsonData));
 });
 
 
